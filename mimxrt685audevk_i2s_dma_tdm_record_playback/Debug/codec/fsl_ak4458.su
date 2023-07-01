@@ -1,0 +1,12 @@
+../codec/fsl_ak4458.c:24:13:Delay	16	static
+../codec/fsl_ak4458.c:33:6:AK4458_DefaultConfig	16	static
+../codec/fsl_ak4458.c:48:10:AK4458_Init	24	static
+../codec/fsl_ak4458.c:126:10:AK4458_SetEncoding	24	static
+../codec/fsl_ak4458.c:165:10:AK4458_ConfigDataFormat	40	static
+../codec/fsl_ak4458.c:289:10:AK4458_SetVolume	24	static
+../codec/fsl_ak4458.c:305:10:AK4458_GetVolume	24	static
+../codec/fsl_ak4458.c:323:10:AK4458_Deinit	24	static
+../codec/fsl_ak4458.c:334:10:AK4458_ModuleControl	32	static
+../codec/fsl_ak4458.c:349:10:AK4458_WriteReg	24	static
+../codec/fsl_ak4458.c:358:10:AK4458_ReadReg	32	static
+../codec/fsl_ak4458.c:367:10:AK4458_ModifyReg	24	static
