@@ -1,0 +1,41 @@
+codec/fsl_codec_common.o codec/fsl_codec_common.d: \
+ ../codec/fsl_codec_common.c ../codec/fsl_codec_common.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_common.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\device/fsl_device_registers.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\device/MIMXRT685S_cm33.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\CMSIS/core_cm33.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\CMSIS/cmsis_version.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\CMSIS/cmsis_compiler.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\CMSIS/cmsis_gcc.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\CMSIS/mpu_armv8.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\MIMXRT685S/system_MIMXRT685S_cm33.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\device/MIMXRT685S_cm33_features.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_common_arm.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_clock.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_reset.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_common.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\codec\port/fsl_codec_adapter.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\codec\port\cs42448/fsl_codec_cs42448_adapter.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\codec/fsl_cs42448.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\codec/fsl_codec_i2c.h \
+ D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\component\i2c/fsl_adapter_i2c.h
+../codec/fsl_codec_common.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_common.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\device/fsl_device_registers.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\device/MIMXRT685S_cm33.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\CMSIS/core_cm33.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\CMSIS/cmsis_version.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\CMSIS/cmsis_compiler.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\CMSIS/cmsis_gcc.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\CMSIS/mpu_armv8.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\MIMXRT685S/system_MIMXRT685S_cm33.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\device/MIMXRT685S_cm33_features.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_common_arm.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_clock.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_reset.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_common.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\codec\port/fsl_codec_adapter.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\codec\port\cs42448/fsl_codec_cs42448_adapter.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\codec/fsl_cs42448.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\codec/fsl_codec_i2c.h:
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\component\i2c/fsl_adapter_i2c.h:

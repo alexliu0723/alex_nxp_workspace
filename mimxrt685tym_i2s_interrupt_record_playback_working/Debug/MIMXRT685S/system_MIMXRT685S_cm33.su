@@ -1,0 +1,5 @@
+../MIMXRT685S/system_MIMXRT685S_cm33.c:60:17:getOscClk	4	static
+../MIMXRT685S/system_MIMXRT685S_cm33.c:66:17:getFFroFreq	16	static
+../MIMXRT685S/system_MIMXRT685S_cm33.c:97:29:SystemInit	8	static
+../MIMXRT685S/system_MIMXRT685S_cm33.c:143:6:SystemCoreClockUpdate	96	static
+../MIMXRT685S/system_MIMXRT685S_cm33.c:220:29:SystemInitHook	4	static
