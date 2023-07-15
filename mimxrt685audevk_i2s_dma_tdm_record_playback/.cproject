@@ -297,7 +297,7 @@
 								<option id="com.crt.advproject.link.ecrp.1774919202" name="Enhanced CRP" superClass="com.crt.advproject.link.ecrp" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.gcc.nanofloat.1952732320" name="Enable printf float " superClass="com.crt.advproject.link.gcc.nanofloat" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.gcc.nanofloat.scanf.65665902" name="Enable scanf float " superClass="com.crt.advproject.link.gcc.nanofloat.scanf" useByScannerDiscovery="false"/>
-								<option id="com.crt.advproject.link.toram.111871738" name="Link application to RAM" superClass="com.crt.advproject.link.toram" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.link.toram.111871738" name="Link application to RAM" superClass="com.crt.advproject.link.toram" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="com.crt.advproject.link.stackOffset.1458811457" name="Stack offset" superClass="com.crt.advproject.link.stackOffset" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.gcc.multicore.master.581154446" name="Multicore master" superClass="com.crt.advproject.link.gcc.multicore.master" useByScannerDiscovery="false"/>
 								<option id="com.crt.advproject.link.gcc.multicore.empty.1729726076" name="No Multicore options for this project" superClass="com.crt.advproject.link.gcc.multicore.empty" useByScannerDiscovery="false"/>

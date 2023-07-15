@@ -81,18 +81,6 @@
                         <pin_feature name="iiena" value="disabled"/>
                      </pin_features>
                   </pin>
-                  <pin peripheral="FLEXCOMM1" signal="TXD_SCL_MISO_WS" pin_num="K16" pin_signal="PIO0_8/FC1_TXD_SCL_MISO_WS/SCT0_GPI5/SCT0_OUT5/CTIMER1_MAT1/I2S_BRIDGE_WS_OUT/SEC_PIO0_8">
-                     <pin_features>
-                        <pin_feature name="pupdena" value="disabled"/>
-                        <pin_feature name="pupdsel" value="pullDown"/>
-                        <pin_feature name="ibena" value="enabled"/>
-                        <pin_feature name="slew_rate" value="normal"/>
-                        <pin_feature name="drive" value="full"/>
-                        <pin_feature name="amena" value="disabled"/>
-                        <pin_feature name="odena" value="disabled"/>
-                        <pin_feature name="iiena" value="disabled"/>
-                     </pin_features>
-                  </pin>
                   <pin peripheral="FLEXCOMM1" signal="SCK" pin_num="J15" pin_signal="PIO0_7/FC1_SCK/SCT0_GPI4/SCT0_OUT4/CTIMER1_MAT0/I2S_BRIDGE_CLK_OUT/SEC_PIO0_7">
                      <pin_features>
                         <pin_feature name="pupdena" value="disabled"/>
@@ -103,15 +91,6 @@
                         <pin_feature name="amena" value="disabled"/>
                         <pin_feature name="odena" value="disabled"/>
                         <pin_feature name="iiena" value="disabled"/>
-                     </pin_features>
-                  </pin>
-                  <pin peripheral="FLEXCOMM2" signal="TXD_SCL_MISO_WS" pin_num="A16" pin_signal="PIO0_15/FC2_TXD_SCL_MISO_WS/SCT0_GPI1/SCT0_OUT1/CTIMER2_MAT1/I2S_BRIDGE_WS_IN/SEC_PIO0_15">
-                     <pin_features>
-                        <pin_feature name="pupdena" value="disabled"/>
-                        <pin_feature name="pupdsel" value="pullDown"/>
-                        <pin_feature name="ibena" value="enabled"/>
-                        <pin_feature name="drive" value="full"/>
-                        <pin_feature name="odena" value="disabled"/>
                      </pin_features>
                   </pin>
                   <pin peripheral="FLEXCOMM7" signal="CTS_SDA_SSEL0" pin_num="T3" pin_signal="PIO4_3/FC7_CTS_SDA_SSEL0">
@@ -130,6 +109,55 @@
                         <pin_feature name="odena" value="enabled"/>
                      </pin_features>
                   </pin>
+                  <pin peripheral="GPIO" signal="PIO1, 0" pin_num="H4" pin_signal="PIO1_0/FC4_RTS_SCL_SSEL1/SCT0_GPI1/SCT0_OUT7/CTIMER_INP8/FC3_SSEL3">
+                     <pin_features>
+                        <pin_feature name="pupdena" value="enabled"/>
+                        <pin_feature name="pupdsel" value="pullUp"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="FLEXCOMM15" signal="SDA" pin_num="F3" pin_signal="PMIC_I2C_SDA"/>
+                  <pin peripheral="FLEXCOMM3" signal="SCK" pin_num="A12" pin_signal="PIO0_21/FC3_SCK/CTIMER3_MAT0/TRACECLK/SEC_PIO0_21">
+                     <pin_features>
+                        <pin_feature name="ibena" value="enabled"/>
+                        <pin_feature name="drive" value="full"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="FLEXCOMM3" signal="TXD_SCL_MISO_WS" pin_num="A10" pin_signal="PIO0_22/FC3_TXD_SCL_MISO_WS/CTIMER3_MAT1/TRACEDATA(0)/SEC_PIO0_22">
+                     <pin_features>
+                        <pin_feature name="ibena" value="enabled"/>
+                        <pin_feature name="drive" value="full"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="FLEXCOMM3" signal="RXD_SDA_MOSI_DATA" pin_num="A8" pin_signal="PIO0_23/FC3_RXD_SDA_MOSI_DATA/CTIMER3_MAT2/TRACEDATA(1)/SEC_PIO0_23">
+                     <pin_features>
+                        <pin_feature name="ibena" value="enabled"/>
+                        <pin_feature name="drive" value="full"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="FLEXCOMM4" signal="SCK" pin_num="A6" pin_signal="PIO0_28/FC4_SCK/CTIMER4_MAT0/I2S_BRIDGE_CLK_OUT/SEC_PIO0_28">
+                     <pin_features>
+                        <pin_feature name="ibena" value="enabled"/>
+                        <pin_feature name="drive" value="full"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="FLEXCOMM4" signal="TXD_SCL_MISO_WS" pin_num="B6" pin_signal="PIO0_29/FC4_TXD_SCL_MISO_WS/CTIMER4_MAT1/I2S_BRIDGE_WS_OUT/SEC_PIO0_29">
+                     <pin_features>
+                        <pin_feature name="ibena" value="enabled"/>
+                        <pin_feature name="drive" value="full"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="FLEXCOMM4" signal="RXD_SDA_MOSI_DATA" pin_num="C6" pin_signal="PIO0_30/FC4_RXD_SDA_MOSI_DATA/CTIMER4_MAT2/I2S_BRIDGE_DATA_OUT/SEC_PIO0_30">
+                     <pin_features>
+                        <pin_feature name="ibena" value="enabled"/>
+                        <pin_feature name="drive" value="full"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="FLEXCOMM2" signal="TXD_SCL_MISO_WS" pin_num="A16" pin_signal="PIO0_15/FC2_TXD_SCL_MISO_WS/SCT0_GPI1/SCT0_OUT1/CTIMER2_MAT1/I2S_BRIDGE_WS_IN/SEC_PIO0_15">
+                     <pin_features>
+                        <pin_feature name="ibena" value="enabled"/>
+                        <pin_feature name="drive" value="full"/>
+                     </pin_features>
+                  </pin>
                   <pin peripheral="FLEXCOMM2" signal="SCK" pin_num="B17" pin_signal="PIO0_14/FC2_SCK/SCT0_GPI0/SCT0_OUT0/CTIMER2_MAT0/I2S_BRIDGE_CLK_IN/SEC_PIO0_14">
                      <pin_features>
                         <pin_feature name="ibena" value="enabled"/>
@@ -138,16 +166,11 @@
                   </pin>
                   <pin peripheral="FLEXCOMM2" signal="RXD_SDA_MOSI_DATA" pin_num="B12" pin_signal="PIO0_16/FC2_RXD_SDA_MOSI_DATA/SCT0_GPI2/SCT0_OUT2/CTIMER2_MAT2/I2S_BRIDGE_DATA_IN/SEC_PIO0_16">
                      <pin_features>
+                        <pin_feature name="ibena" value="enabled"/>
                         <pin_feature name="drive" value="full"/>
                      </pin_features>
                   </pin>
-                  <pin peripheral="GPIO" signal="PIO1, 0" pin_num="H4" pin_signal="PIO1_0/FC4_RTS_SCL_SSEL1/SCT0_GPI1/SCT0_OUT7/CTIMER_INP8/FC3_SSEL3">
-                     <pin_features>
-                        <pin_feature name="pupdena" value="enabled"/>
-                        <pin_feature name="pupdsel" value="pullUp"/>
-                     </pin_features>
-                  </pin>
-                  <pin peripheral="FLEXCOMM15" signal="SDA" pin_num="F3" pin_signal="PMIC_I2C_SDA"/>
+                  <pin peripheral="FLEXCOMM1" signal="TXD_SCL_MISO_WS" pin_num="K16" pin_signal="PIO0_8/FC1_TXD_SCL_MISO_WS/SCT0_GPI5/SCT0_OUT5/CTIMER1_MAT1/I2S_BRIDGE_WS_OUT/SEC_PIO0_8"/>
                </pins>
             </function>
             <function name="BOARD_InitDebugConsolePins">

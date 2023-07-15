@@ -4,7 +4,6 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-
 #include <stdio.h>
 #include "pin_mux.h"
 #include "board.h"
@@ -20,8 +19,8 @@
  ******************************************************************************/
 #define DEMO_I2S_MASTER_CLOCK_FREQUENCY CLOCK_GetMclkClkFreq()
 #define DEMO_AUDIO_SAMPLE_RATE          (48000)
-#define DEMO_AUDIO_PROTOCOL              kCODEC_BusI2S
-#define DEMO_I2S_TX                     (I2S2)
+#define DEMO_AUDIO_PROTOCOL             kCODEC_BusTDM// kCODEC_BusI2S
+#define DEMO_I2S_TX                     (I2S3)
 #define DEMO_I2S_RX                     (I2S1)
 #define DEMO_DMA                        (DMA0)
 #define DEMO_I2S_TX_CHANNEL             (7)
@@ -29,9 +28,10 @@
 #define DEMO_I2S_CLOCK_DIVIDER          (24576000 / DEMO_AUDIO_SAMPLE_RATE / 32 / 8)
 #define DEMO_I2S_TX_MODE                kI2S_MasterSlaveNormalMaster
 #define DEMO_I2S_RX_MODE                kI2S_MasterSlaveNormalMaster
+//#define DEMO_I2S_RX_MODE                kI2S_MasterSlaveNormalSlave
 #define DEMO_CODEC_I2C_BASEADDR         I2C7
 #define DEMO_CODEC_I2C_INSTANCE         7U  /*setting fc7-i2c*/
-#define DEMO_TDM_DATA_START_POSITION    0U
+#define DEMO_TDM_DATA_START_POSITION    1U
 #define BUFFER_SIZE   (1024U)
 #define BUFFER_NUMBER (1U)
 
@@ -122,7 +122,7 @@ int main(void)
     CLOCK_EnableClock(kCLOCK_InputMux);
     /* I2C */
     CLOCK_AttachClk(kFFRO_to_FLEXCOMM7);
-    /* attach AUDIO PLL clock to FLEXCOMM1 (I2S1) tx*/
+    /* attach AUDIO PLL clock to FLEXCOMM1 (I2S3) tx*/
     CLOCK_AttachClk(kAUDIO_PLL_to_FLEXCOMM1);
     /* attach AUDIO PLL clock to FLEXCOMM2 (I2S2) rx*/
     CLOCK_AttachClk(kAUDIO_PLL_to_FLEXCOMM2);
@@ -131,7 +131,11 @@ int main(void)
     CLOCK_AttachClk(kAUDIO_PLL_to_MCLK_CLK);
     CLOCK_SetClkDiv(kCLOCK_DivMclkClk, 1);
     SYSCTL1->MCLKPINDIR = SYSCTL1_MCLKPINDIR_MCLKPINDIR_MASK;
-
+   /*TEST SETTING - SET SHARED SIGANL SET 0: WS FROM FLEXCOMM1*/
+  //  SYSCTL1->SHAREDCTRLSET[0] = SYSCTL1_SHAREDCTRLSET_SHAREDSCKSEL(2) |
+  //  		SYSCTL1_SHAREDCTRLSET_SHAREDWSSEL(2);
+   /*TEST SETTING - SET FLEXCOMM3 SCK,WS FORM SHARED SIGNAL SET 0*/
+   // SYSCTL1->FCCTRLSEL[1] = SYSCTL1_FCCTRLSEL_SCKINSEL(1) | SYSCTL1_FCCTRLSEL_WSINSEL(1);
   //  cs42448Config.i2cConfig.codecI2CSourceClock = CLOCK_GetFlexCommClkFreq(2);
   //  cs42448Config.format.mclk_HZ                = CLOCK_GetMclkClkFreq();
     ak4458Config.i2cConfig.codecI2CSourceClock = CLOCK_GetFlexCommClkFreq(7);//FLEXCOMM7
@@ -158,7 +162,7 @@ int main(void)
     I2S_TxGetDefaultConfig(&s_TxConfig);
     s_TxConfig.divider     = DEMO_I2S_CLOCK_DIVIDER;
     s_TxConfig.masterSlave = kI2S_MasterSlaveNormalMaster;
-  //  s_TxConfig.mode        = kI2S_ModeDspWsShort;
+    s_TxConfig.mode        = kI2S_ModeDspWsShort;
   //  s_TxConfig.wsPol       = true;
     s_TxConfig.dataLength  = 32U;
     s_TxConfig.frameLength = 32 * 8U;
@@ -173,10 +177,17 @@ int main(void)
     I2S_RxGetDefaultConfig(&s_RxConfig);
     s_RxConfig.divider     = DEMO_I2S_CLOCK_DIVIDER;
     s_RxConfig.masterSlave = kI2S_MasterSlaveNormalMaster;
-    s_RxConfig.mode        = kI2S_ModeI2sClassic;//kI2S_ModeDspWsShort;
+  //  s_RxConfig.masterSlave = kI2S_MasterSlaveNormalSlave;
+    s_RxConfig.mode        = kI2S_ModeDspWsShort;
     s_RxConfig.wsPol       = true;
-    s_RxConfig.dataLength  = 32U;
+    s_RxConfig.rightLow    = false;
+	s_RxConfig.leftJust    = false;
+    s_RxConfig.sckPol      = true;
+    s_RxConfig.pack48      = true;
+    s_RxConfig.oneChannel  = false;
+    s_RxConfig.txEmptyZero = false;
     s_RxConfig.frameLength = 32 * 8U;
+    s_RxConfig.dataLength  = 32U;
     s_RxConfig.position    = DEMO_TDM_DATA_START_POSITION;
 
     I2S_RxInit(DEMO_I2S_RX, &s_RxConfig);
@@ -196,9 +207,8 @@ int main(void)
     I2S_TxTransferCreateHandleDMA(DEMO_I2S_TX, &s_i2sTxHandle, &s_i2sTxDmaHandle, i2s_tx_Callback, NULL);
     I2S_RxTransferCreateHandleDMA(DEMO_I2S_RX, &s_i2sRxHandle, &s_i2sRxDmaHandle, i2s_rx_Callback, NULL);
 
-
     /* codec initialization */
-    DEMO_InitCodec();
+ //   DEMO_InitCodec();
 //test code
     //reset ak4458
    // GPIO_PinWrite(GPIO, AK4588_PDN_PORT, AK4588_PDN_PIN, 1);
@@ -215,9 +225,10 @@ int main(void)
 
         if (emptyBlock > 0)
         {
+
             xfer.data     = Buffer + rx_index * BUFFER_SIZE;
             xfer.dataSize = BUFFER_SIZE;
-            if (kStatus_Success == I2S_RxTransferReceiveDMA(DEMO_I2S_RX, &s_i2sRxHandle, xfer))
+            if (kStatus_Success == I2S_RxTransferReceiveDMA(I2S2, &s_i2sRxHandle, xfer))
             {
                 rx_index++;
             }
@@ -228,9 +239,10 @@ int main(void)
         }
         if (emptyBlock < BUFFER_NUMBER)
         {
+
             xfer.data     = Buffer + tx_index * BUFFER_SIZE;
             xfer.dataSize = BUFFER_SIZE;
-            if (kStatus_Success == I2S_TxTransferSendDMA(DEMO_I2S_TX, &s_i2sTxHandle, xfer))
+            if (kStatus_Success == I2S_TxTransferSendDMA(I2S1, &s_i2sTxHandle, xfer))
             {
                 tx_index++;
             }

@@ -640,7 +640,7 @@ void I2S_TxTransferAbort(I2S_Type *base, i2s_handle_t *handle)
 
 /*!
  * brief Initializes handle for reception of audio data.
- *
+ * FIFOINTENSET
  * param base I2S base pointer.
  * param handle pointer to handle structure.
  * param callback function to be called back when transfer is done or fails.
