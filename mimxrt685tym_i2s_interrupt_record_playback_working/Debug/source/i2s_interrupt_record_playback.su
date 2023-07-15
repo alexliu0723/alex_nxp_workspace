@@ -1,0 +1,5 @@
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_clock.h:885:20:CLOCK_EnableClock	24	static
+../source/i2s_interrupt_record_playback.c:91:5:main	8	static
+../source/i2s_interrupt_record_playback.c:208:13:StartDigitalLoopback	8	static
+../source/i2s_interrupt_record_playback.c:228:13:TxCallback	32	static
+../source/i2s_interrupt_record_playback.c:235:13:RxCallback	32	static

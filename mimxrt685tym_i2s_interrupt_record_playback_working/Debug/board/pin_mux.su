@@ -1,0 +1,5 @@
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_iopctl.h:88:22:IOPCTL_PinMuxSet	24	static
+../board/pin_mux.c:36:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:66:6:BOARD_InitPins	24	static
+../board/pin_mux.c:163:6:BOARD_InitCS42448Pins	40	static
+../board/pin_mux.c:335:6:BOARD_InitDebugConsolePins	16	static
