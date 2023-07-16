@@ -1,5 +1,0 @@
-D:\alex_work_space\NXP_wrokspace\mimxrt685audevk_i2s_dma_tdm_record_playback\drivers/fsl_iopctl.h:88:22:IOPCTL_PinMuxSet	24	static
-../board/pin_mux.c:39:6:BOARD_InitBootPins	8	static
-../board/pin_mux.c:90:6:BOARD_InitCS42448Pins	72	static
-../board/pin_mux.c:451:6:BOARD_InitDebugConsolePins	16	static
-../board/pin_mux.c:514:6:BOARD_InitPins	4	static

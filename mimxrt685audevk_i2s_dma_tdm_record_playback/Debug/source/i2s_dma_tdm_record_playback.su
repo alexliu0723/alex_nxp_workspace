@@ -1,7 +1,0 @@
-D:\alex_work_space\NXP_wrokspace\mimxrt685audevk_i2s_dma_tdm_record_playback\drivers/fsl_clock.h:885:20:CLOCK_EnableClock	24	static
-D:\alex_work_space\NXP_wrokspace\mimxrt685audevk_i2s_dma_tdm_record_playback\drivers/fsl_dma.h:405:20:DMA_EnableChannel	16	static
-D:\alex_work_space\NXP_wrokspace\mimxrt685audevk_i2s_dma_tdm_record_playback\drivers/fsl_dma.h:514:20:DMA_SetChannelPriority	24	static
-../source/i2s_dma_tdm_record_playback.c:89:13:i2s_rx_Callback	24	static
-../source/i2s_dma_tdm_record_playback.c:94:13:i2s_tx_Callback	24	static
-../source/i2s_dma_tdm_record_playback.c:111:5:main	24	static
-../source/i2s_dma_tdm_record_playback.c:257:13:DEMO_InitCodec	8	static

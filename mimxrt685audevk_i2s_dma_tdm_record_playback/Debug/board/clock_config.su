@@ -1,6 +1,0 @@
-D:\alex_work_space\NXP_wrokspace\mimxrt685audevk_i2s_dma_tdm_record_playback\drivers/fsl_clock.h:1111:20:CLOCK_SetXtalFreq	16	static
-D:\alex_work_space\NXP_wrokspace\mimxrt685audevk_i2s_dma_tdm_record_playback\drivers/fsl_power.h:316:20:POWER_DisablePD	16	static
-../board/clock_config.c:47:29:BOARD_FlexspiClockSafeConfig	4	static
-../board/clock_config.c:60:29:BOARD_SetFlexspiClock	16	static
-../board/clock_config.c:73:6:BOARD_InitBootClocks	8	static
-../board/clock_config.c:149:6:BOARD_BootClockRUN	8	static
