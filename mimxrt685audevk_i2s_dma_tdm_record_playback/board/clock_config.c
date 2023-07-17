@@ -20,6 +20,7 @@ processor: MIMXRT685S
 package_id: MIMXRT685SFFOB
 mcu_data: ksdk2_0
 processor_version: 13.0.1
+board: MIMXRT685-AUD-EVK
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS **********/
 /* clang-format on */
 
