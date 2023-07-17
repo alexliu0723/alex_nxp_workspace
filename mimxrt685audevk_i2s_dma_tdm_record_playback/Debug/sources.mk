@@ -18,7 +18,7 @@ MIMXRT685S/mcuxpresso \
 MIMXRT685S \
 board \
 codec \
-codec/port \
+codec/port/cs42448 \
 component/i2c \
 component/lists \
 component/uart \

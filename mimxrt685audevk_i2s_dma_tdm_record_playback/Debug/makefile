@@ -15,7 +15,7 @@ RM := rm -rf
 -include component/uart/subdir.mk
 -include component/lists/subdir.mk
 -include component/i2c/subdir.mk
--include codec/port/subdir.mk
+-include codec/port/cs42448/subdir.mk
 -include codec/subdir.mk
 -include board/subdir.mk
 -include MIMXRT685S/mcuxpresso/subdir.mk
@@ -34,7 +34,7 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := mimxrt685audevk_i2s_dma_tdm_record_playback
+BUILD_ARTIFACT_NAME := mimxrt685tym_i2s_interrupt_record_playback_working
 BUILD_ARTIFACT_EXTENSION := axf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
@@ -46,24 +46,24 @@ all:
 	+@$(MAKE) --no-print-directory main-build && $(MAKE) --no-print-directory post-build
 
 # Main-build Target
-main-build: mimxrt685audevk_i2s_dma_tdm_record_playback.axf
+main-build: mimxrt685tym_i2s_interrupt_record_playback_working.axf
 
 # Tool invocations
-mimxrt685audevk_i2s_dma_tdm_record_playback.axf: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
+mimxrt685tym_i2s_interrupt_record_playback_working.axf: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -Xlinker -Map="mimxrt685audevk_i2s_dma_tdm_record_playback.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -T mimxrt685audevk_i2s_dma_tdm_record_playback_Debug.ld -o "mimxrt685audevk_i2s_dma_tdm_record_playback.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -Xlinker -Map="mimxrt685tym_i2s_interrupt_record_playback_working.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -T mimxrt685tym_i2s_interrupt_record_playback_working_Debug.ld -o "mimxrt685tym_i2s_interrupt_record_playback_working.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) mimxrt685audevk_i2s_dma_tdm_record_playback.axf
+	-$(RM) mimxrt685tym_i2s_interrupt_record_playback_working.axf
 	-@echo ' '
 
 post-build:
 	-@echo 'Performing post-build steps'
-	-arm-none-eabi-size "mimxrt685audevk_i2s_dma_tdm_record_playback.axf"; # arm-none-eabi-objcopy -v -O binary "mimxrt685audevk_i2s_dma_tdm_record_playback.axf" "mimxrt685audevk_i2s_dma_tdm_record_playback.bin" ; # checksum -p MIMXRT685S -d "mimxrt685audevk_i2s_dma_tdm_record_playback.bin";
+	-arm-none-eabi-size "mimxrt685tym_i2s_interrupt_record_playback_working.axf"; # arm-none-eabi-objcopy -v -O binary "mimxrt685tym_i2s_interrupt_record_playback_working.axf" "mimxrt685tym_i2s_interrupt_record_playback_working.bin" ; # checksum -p MIMXRT685S -d "mimxrt685tym_i2s_interrupt_record_playback_working.bin";
 	-@echo ' '
 
 .PHONY: all clean dependents main-build post-build

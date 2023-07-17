@@ -1,4 +1,4 @@
-D:\alex_work_space\NXP_wrokspace\mimxrt685audevk_i2s_dma_tdm_record_playback\drivers/fsl_clock.h:885:20:CLOCK_EnableClock	24	static
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_clock.h:885:20:CLOCK_EnableClock	24	static
 ../board/board.c:371:6:BOARD_SetFlexspiClock	16	static
 ../board/board.c:293:6:BOARD_DeinitXip	16	static
 ../board/board.c:309:6:BOARD_InitXip	32	static
@@ -6,8 +6,8 @@ D:\alex_work_space\NXP_wrokspace\mimxrt685audevk_i2s_dma_tdm_record_playback\dri
 ../board/board.c:437:6:BOARD_RestoreDeepSleepPinConfig	4	static
 ../board/board.c:452:6:BOARD_EnterDeepSleep	16	static
 ../board/board.c:459:6:BOARD_EnterDeepPowerDown	16	static
-D:\alex_work_space\NXP_wrokspace\mimxrt685audevk_i2s_dma_tdm_record_playback\drivers/fsl_flexspi.h:431:20:FLEXSPI_SoftwareReset	16	static
-D:\alex_work_space\NXP_wrokspace\mimxrt685audevk_i2s_dma_tdm_record_playback\drivers/fsl_power.h:316:20:POWER_DisablePD	16	static
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_flexspi.h:431:20:FLEXSPI_SoftwareReset	16	static
+D:\alex_work_space\NXP_samplecode_space\mimxrt685tym_i2s_interrupt_record_playback_working\drivers/fsl_power.h:316:20:POWER_DisablePD	16	static
 ../board/board.c:49:6:BOARD_InitDebugConsole	16	static
 ../board/board.c:62:17:flexspi_hyper_ram_write_mcr	48	static
 ../board/board.c:81:17:flexspi_hyper_ram_get_mcr	48	static

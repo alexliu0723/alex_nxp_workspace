@@ -6,17 +6,30 @@
  * Generated linker script file for MIMXRT685S
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.7.0 [Build 9198] [2023-01-17] on 2023年6月6日 下午4:54:36
+ * MCUXpresso IDE v11.7.0 [Build 9198] [2023-01-17] on 2023年6月11日 下午3:07:44
  */
 
-INCLUDE "mimxrt685audevk_i2s_dma_tdm_record_playback_Debug_library.ld"
-INCLUDE "mimxrt685audevk_i2s_dma_tdm_record_playback_Debug_memory.ld"
+INCLUDE "mimxrt685audevk_i2s_interrupt_record_playback_Debug_library.ld"
+INCLUDE "mimxrt685audevk_i2s_interrupt_record_playback_Debug_memory.ld"
 
 ENTRY(ResetISR)
 
 SECTIONS
 {
-     /* MAIN TEXT SECTION */
+     /* Image Vector Table and Boot Data for booting from external flash */
+    .boot_hdr : ALIGN(4)
+    {
+        FILL(0x00)
+        __boot_hdr_start__ = ABSOLUTE(.) ;
+        . = 0x400 ;
+        __flash_conf_hdr_start__ = ABSOLUTE(.) ;
+        KEEP(*(.flash_conf))
+        __flash_conf_hdr_end__ = ABSOLUTE(.) ;
+        . = 0x1000 ;
+         __boot_hdr_end__ = ABSOLUTE(.) ;
+    } >QSPI_FLASH
+
+    /* MAIN TEXT SECTION */
     .text : ALIGN(4)
     {
         FILL(0xff)
@@ -47,7 +60,7 @@ SECTIONS
        *(.text*)
        *(.rodata .rodata.* .constdata .constdata.*)
        . = ALIGN(4);
-    } > SRAM
+    } > QSPI_FLASH
     /*
      * for exception handling/unwind - some Newlib functions (in common
      * with C++ and STDC++) use this.
@@ -55,14 +68,14 @@ SECTIONS
     .ARM.extab : ALIGN(4)
     {
         *(.ARM.extab* .gnu.linkonce.armextab.*)
-    } > SRAM
+    } > QSPI_FLASH
 
     .ARM.exidx : ALIGN(4)
     {
         __exidx_start = .;
         *(.ARM.exidx* .gnu.linkonce.armexidx.*)
         __exidx_end = .;
-    } > SRAM
+    } > QSPI_FLASH
  
     _etext = .;
         
@@ -88,7 +101,7 @@ SECTIONS
         . = ALIGN(4) ;
         PROVIDE(__end_data_RAM2 = .) ;
         PROVIDE(__end_data_USB_RAM = .) ;
-     } > USB_RAM AT>SRAM
+     } > USB_RAM AT>QSPI_FLASH
 
     /* MAIN DATA SECTION */
     .uninit_RESERVED (NOLOAD) : ALIGN(4)
@@ -116,7 +129,7 @@ SECTIONS
        _edata = . ;
        PROVIDE(__end_data_RAM = .) ;
        PROVIDE(__end_data_SRAM = .) ;
-    } > SRAM AT>SRAM
+    } > SRAM AT>QSPI_FLASH
 
     /* BSS section for USB_RAM */
     .bss_RAM2 : ALIGN(4)

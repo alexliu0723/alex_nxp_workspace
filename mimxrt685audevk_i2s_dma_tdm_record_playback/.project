@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>mimxrt685audevk_i2s_dma_tdm_record_playback</name>
+	<name>mimxrt685tym_i2s_interrupt_record_playback_working</name>
 	<comment></comment>
 	<projects>
 	</projects>
